@@ -13,7 +13,7 @@ Project {
             "QDBusFreedesktopProperty.cpp",
             "QDBusFreedesktopProperty.h",
         ]
-        name: "QDBusProperty"
+        name: "QDbusFreedesktopProperty"
 
         Export {
             Depends {
