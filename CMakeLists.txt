@@ -22,10 +22,7 @@ add_library(QDbusFreedesktopProperty SHARED ${QDbusFreedesktopPropertySource})
 set_property(TARGET QDbusFreedesktopProperty PROPERTY CXX_STANDARD 17)
 set_target_properties(QDbusFreedesktopProperty PROPERTIES PUBLIC_HEADER "${QDbusFreedesktopPropertyInclude}")
 
-target_include_directories(QDbusFreedesktopProperty PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>/include/
-    $<INSTALL_INTERFACE:include>
-    )
+target_include_directories(QDbusFreedesktopProperty PUBLIC include/)
 
 target_link_libraries(QDbusFreedesktopProperty Qt5::Core)
 target_link_libraries(QDbusFreedesktopProperty Qt5::DBus)
