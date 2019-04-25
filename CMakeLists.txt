@@ -9,25 +9,24 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set (QDbusFreedesktopPropertySource 
-    src/QDBusFreedesktopInterface.cpp
-    src/QDBusFreedesktopInterfaceManager.cpp
-    src/QDBusFreedesktopProperty.cpp
-    )
 set (QDbusFreedesktopPropertyInclude
     include/QDBusFreedesktopInterface.h
     include/QDBusFreedesktopInterfaceManager.h
     include/QDBusFreedesktopProperty.h
 )
-    
-    
-qt5_wrap_cpp(QDbusFreedesktopPropertyMoc ${QDbusFreedesktopPropertyInclude})
+
+set (QDbusFreedesktopPropertySource 
+    src/QDBusFreedesktopInterface.cpp
+    src/QDBusFreedesktopInterfaceManager.cpp
+    src/QDBusFreedesktopProperty.cpp
+    ${QDbusFreedesktopPropertyInclude}
+    )
 
 # Find the Qt5Core library
 find_package(Qt5Core CONFIG REQUIRED)
 find_package(Qt5DBus CONFIG REQUIRED)
 
-add_library(QDbusFreedesktopProperty STATIC ${QDbusFreedesktopPropertySource} ${QDbusFreedesktopPropertyMoc})
+add_library(QDbusFreedesktopProperty STATIC ${QDbusFreedesktopPropertySource})
 set_property(TARGET QDbusFreedesktopProperty PROPERTY CXX_STANDARD 17)
 set_target_properties(QDbusFreedesktopProperty PROPERTIES PUBLIC_HEADER "${QDbusFreedesktopPropertyInclude}")
 
