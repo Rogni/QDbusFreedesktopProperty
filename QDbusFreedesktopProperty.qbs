@@ -6,12 +6,12 @@ Project {
         Depends {name: "Qt.core" }
         Depends {name: "Qt.dbus" }
         files: [
-            "QDBusFreedesktopInterface.cpp",
-            "QDBusFreedesktopInterface.h",
-            "QDBusFreedesktopInterfaceManager.cpp",
-            "QDBusFreedesktopInterfaceManager.h",
-            "QDBusFreedesktopProperty.cpp",
-            "QDBusFreedesktopProperty.h",
+            "src/QDBusFreedesktopInterface.cpp",
+            "include/QDBusFreedesktopInterface.h",
+            "src/QDBusFreedesktopInterfaceManager.cpp",
+            "include/QDBusFreedesktopInterfaceManager.h",
+            "src/QDBusFreedesktopProperty.cpp",
+            "include/QDBusFreedesktopProperty.h",
         ]
         name: "QDbusFreedesktopProperty"
 
